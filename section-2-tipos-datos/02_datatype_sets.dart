@@ -34,6 +34,8 @@ main(){
     3.0: 8000,
   };
 
+  var _$$_ = 10;
+
   Map<String, dynamic> capitan = new Map();
   capitan.addAll({
     'nombre': 'Lionel',
