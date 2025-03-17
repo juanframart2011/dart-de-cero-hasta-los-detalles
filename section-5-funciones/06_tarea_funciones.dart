@@ -13,8 +13,18 @@ main() {
   // Crear una función para imprimir STDOUTS en lugar de 
   // la siguiente línea. Luego todos los stdouts deberían ser
   // llamados usando nuestra función personalizada
-  imprimir('=========== Usuario 1 =============');
+  
+  procesarUsuario('Messi', 1500);
+  procesarUsuario('Juan', 1800);
+}
 
+void imprimir( String texto ) => stdout.writeln(texto);
+
+String leer() => stdin.readLineSync() ?? '';
+
+void procesarUsuario( String userName, double salario){
+
+  imprimir('=========== Usuario $userName =============');
 
   imprimir('¿Cúal es su nombre?');
   String nombre = stdin.readLineSync() ?? '';
@@ -32,10 +42,9 @@ main() {
     'pais'  : pais
   };
 
-  imprimir('Usuario 1 sin deducciones');
-  imprimir( usuario );
+  imprimir('Usuario $userName sin deducciones');
+  imprimir( usuario.toString() );
 
-  double salario     = 1500;
   double deducciones = salario * 0.15;
   double salarioNeto = salario - deducciones;
 
@@ -43,40 +52,5 @@ main() {
   usuario['deducciones'] = deducciones;
   usuario['salarioNeto'] = salarioNeto;
 
-  imprimir(usuario);
-
-
-  // Persona 2
-  imprimir('=========== Usuario 2 =============');
-
-  imprimir('¿Cúal es su nombre?');
-  String nombre2 = stdin.readLineSync() ?? '';
-
-  imprimir('¿Qué edad tienes?');
-  String edad2 = stdin.readLineSync() ?? '';
-  
-  imprimir('¿En qué país naciste?');
-  String pais2 = stdin.readLineSync() ?? '';
-  
-
-  final Map<String, dynamic> usuario2 = {
-    'nombre': nombre2,
-    'edad'  : edad2,
-    'pais'  : pais2
-  };
-
-  imprimir('Usuario 2 sin deducciones');
-  imprimir( usuario2 );
-
-  double salario2     = 1800;
-  double deducciones2 = salario2 * 0.15;
-  double salarioNeto2 = salario2 - deducciones2;
-
-  usuario2['salario']     = salario2;
-  usuario2['deducciones'] = deducciones2;
-  usuario2['salarioNeto'] = salarioNeto2;
-
-  imprimir(usuario2);
+  imprimir(usuario.toString());
 }
-
-void imprimir( String texto ) => stdout.writeln(texto);
