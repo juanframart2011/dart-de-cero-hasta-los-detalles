@@ -10,10 +10,12 @@ main(){
 
   print(persona['nombre']);*/
 
-  final persona = new Persona();
-  persona..nombre = 'Fernando'
-          ..edad = 33
-          ..bio = 'Nací en Costa Rica';
-  print(persona);
+  final persona = new Persona( edad:20, nombre:'Juan');
+  final persona2 = new Persona.persona30('Fernando');
 
+  /*persona..nombre = 'Fernando'
+          ..edad = 33;*/
+
+  persona.bio = 'Hola Mundo';
+  print(persona2);
 }
