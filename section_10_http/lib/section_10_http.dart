@@ -43,6 +43,7 @@ void getCountrys_service(String country){
       print('Longitud: ${data[0].latlng[1]}');
       print('Moneda: ${data[0].currencies.cop.name}');
       print('Bandera: ${data[0].flags.svg}');
+      print('===========================');
     }
     else {
       // If the server did not return a 200 OK response,
